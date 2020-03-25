@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div>
+
+    <form method="POST" action="/reset_request">
+        {{form.hidden_tag()}}
+        <fieldset class="form-group">
+            <legend class="borde-bottom mb-4">Reset password</legend>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label")}}
+                {{ form.email(class="form-control form-control-lg")}}
+            </div>
+           
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Reset</button>
+        </div>
+      
+    </form>
+    
+</div>
+{% endblock %}

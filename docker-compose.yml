@@ -1,0 +1,19 @@
+web:
+    image: flask
+    volumes: 
+        - ./flaskblog:/app
+    ports: 
+        - "5000:5000"
+    command: 
+        - /app/run.py
+    links: 
+        - db
+    hostname: appserver
+
+db:
+    hostname: db
+    build: ./mysqldump
+    ports: 
+        - "33060:3306"
+        - "3306:3306"
+ 

@@ -1,0 +1,12 @@
+web:
+    build: ./FlaskBlog
+    ports: 
+        - "5000:5000"
+    links: 
+        - db
+
+db:
+    build: ./mysqldump
+    ports: 
+        - "33060:3306"
+    hostname: mysqlserver
